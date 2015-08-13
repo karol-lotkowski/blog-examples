@@ -13,3 +13,9 @@ hs_err_pid*
 
 # IDE configuration
 .idea/
+
+# Gradle
+.gradle
+
+# Output
+build
