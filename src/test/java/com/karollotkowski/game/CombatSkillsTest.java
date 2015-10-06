@@ -8,6 +8,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -31,7 +32,7 @@ public class CombatSkillsTest {
         assertThat("Fight damage should match", damage, is(fixtures.fightDamage));
 
         verify(combatSkills).fight();
-        verify(combatSkills, times(0)).spell();
+        verify(combatSkills, never()).spell();
     }
 
     @Test
@@ -45,7 +46,7 @@ public class CombatSkillsTest {
         // then
         assertThat("Spell damage should match", damage, is(fixtures.spellDamage));
 
-        verify(combatSkills, times(0)).fight();
+        verify(combatSkills, never()).fight();
         verify(combatSkills).spell();
     }
 
@@ -61,7 +62,7 @@ public class CombatSkillsTest {
         // then
         assertThat("Spell damage should match", damage, is(fixtures.spellDamage));
 
-        verify(combatSkills, times(0)).fight();
+        verify(combatSkills, never()).fight();
         verify(combatSkills).spell();
     }
 
